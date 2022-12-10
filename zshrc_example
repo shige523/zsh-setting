@@ -1,0 +1,34 @@
+#setopt
+setopt auto_cd
+setopt correct
+
+## 補完機能の導入
+autoload -Uz compinit
+compinit -u
+
+## 補完の背景色付け
+autoload -Uz colors
+colors
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+
+zstyle ':completion:*' menu select
+
+# 単語の途中で補完を有効化
+setopt complete_in_word
+
+#starship
+eval "$(starship init zsh)"
+
+#asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+#direnv
+eval "$(direnv hook zsh)"
+
+# git alias
+alias gpl="git pull"
+alias gps="git push"
+alias gcm="git commit"
+alias gad="git add"
+alias gss="git status"
+alias gs="git stash"
+alias gco="git checkout"
