@@ -42,4 +42,3 @@ alias ll='ls -al'
 
 # app alias
 alias chrome='open "/Applications/Google Chrome.app"'
-alias docker='open /Applications/Docker.app"'
