@@ -1,3 +1,4 @@
+##START
 #brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -42,3 +43,10 @@ alias ll='ls -al'
 
 # app alias
 alias chrome='open "/Applications/Google Chrome.app"'
+alias ddesktop="open /Applications/Docker.app"
+
+# k8s
+alias k=kubectl
+[[ /Users/shige/.asdf/shims/kubectl ]] && source <(kubectl completion zsh)
+
+##END
