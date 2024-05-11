@@ -4,7 +4,6 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 #setopt
 setopt auto_cd
-setopt correct
 
 ## 補完機能の導入
 autoload -Uz compinit
@@ -23,11 +22,8 @@ setopt complete_in_word
 #starship
 eval "$(starship init zsh)"
 
-#asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-#direnv
-eval "$(direnv hook zsh)"
+#mise
+eval "$(mise activate zsh)"
 
 # git alias
 alias gpl="git pull"
@@ -37,16 +33,14 @@ alias gad="git add"
 alias gss="git status"
 alias gs="git stash"
 alias gco="git checkout"
-
-# command alias
-alias ll='ls -al'
-
-# app alias
-alias chrome='open "/Applications/Google Chrome.app"'
-alias ddesktop="open /Applications/Docker.app"
+alias glo="git log --pretty='format:%C(yellow)%h %C(green)%cd %C(reset)%s %C(red)%d %C(cyan)[%an]' --date=iso"
 
 # k8s
 alias k=kubectl
 [[ /Users/shige/.asdf/shims/kubectl ]] && source <(kubectl completion zsh)
+
+#gcp
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 ##END
